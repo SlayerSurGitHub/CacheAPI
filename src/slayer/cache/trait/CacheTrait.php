@@ -5,7 +5,7 @@ namespace slayer\cache\trait;
 trait CacheTrait
 {
     /** @var array */
-    public static array $cache = [];
+    protected array $cache = [];
 
     /**
      * @param array $cache
@@ -13,7 +13,7 @@ trait CacheTrait
      */
     public function setCache(array $cache): void
     {
-        self::$cache = $cache;
+        $this->cache = $cache;
     }
 
     /**
@@ -21,7 +21,7 @@ trait CacheTrait
      */
     public function getCache(): array
     {
-        return self::$cache;
+        return $this->cache;
     }
 
 }
