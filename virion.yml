@@ -1,5 +1,5 @@
 name: CacheAPI
 version: 1.0
 antigen: slayer\cache\CacheHandler
-author: Muqsit
+author: Slayer
 api: 5.0.0
