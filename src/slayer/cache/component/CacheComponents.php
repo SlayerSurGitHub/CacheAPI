@@ -8,6 +8,8 @@ use slayer\cache\enum\CacheType;
 
 abstract class CacheComponents
 {
+    private Config $config;
+
     /**
      * @param PluginBase $pluginBase
      * @param CacheType $cacheType
@@ -16,7 +18,12 @@ abstract class CacheComponents
         private readonly PluginBase $pluginBase,
         private readonly CacheType $cacheType
     )
-    {}
+    {
+        $this->config = new Config(
+            $this->pluginBase->getDataFolder() . strtolower($this->getIdentifier()) . "." . strtolower(($type = $this->cacheType)->name),
+            $type->value
+        );
+    }
 
     /**
      * @return string
@@ -39,7 +46,7 @@ abstract class CacheComponents
      */
     public function getConfig(): Config
     {
-        return new Config($this->pluginBase->getDataFolder() . strtolower($this->getIdentifier()) . "." . strtolower(($type = $this->cacheType)->name), $type->value);
+        return $this->config;
     }
 
 }
