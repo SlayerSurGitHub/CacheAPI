@@ -2,6 +2,8 @@
 
 namespace slayer\cache\trait;
 
+use pocketmine\utils\Config;
+
 trait CacheTrait
 {
     /** @var array */

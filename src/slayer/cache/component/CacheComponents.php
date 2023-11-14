@@ -8,6 +8,7 @@ use slayer\cache\enum\CacheType;
 
 abstract class CacheComponents
 {
+    /** @var Config */
     private Config $config;
 
     /**
