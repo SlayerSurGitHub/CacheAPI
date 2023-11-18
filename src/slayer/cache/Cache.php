@@ -7,6 +7,7 @@ use slayer\cache\component\CacheComponents;
 
 class Cache
 {
+    /** @var CacheComponents[] */
     private array $components = [];
 
     /**
